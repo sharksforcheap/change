@@ -1,9 +1,12 @@
 ChangeOrg::Application.routes.draw do
   resources :petitions
-  devise_for :users
+  devise_for :users do
+   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+  root :to => "petitions#index"
 
-  devise_scope :user do root :to => "petitions#index" end
 
+  resources :users, :only => :show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,8 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+	<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+    	<a class="brand" href="<%root_path%>">
+			  iVote
+			</a>
+			<ul class="nav">
+			  <li class="active">
+  			  <a href="<%= root_path%>">Home</a>
+			  </li>
+			  <% if current_user %>
+				  <li><a href="<%= destroy_user_session_path%>">Logout</a></li>
+ 				  <li><a href="<%= edit_user_registration_path%>">Edit account</a></li>
+
+				<% else %>
+  		  	<li><a href="<%= new_user_session_path%>">Login</a></li>
+  		  	<li><a href="<%= new_user_registration_path %>">Sign up</a></li>
+				<% end %>
+
+			</ul>
+    </div>
+  </div>	</div>
+	<% if notice %>
+		<p class="notice"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert"><%= alert %></p>
+	<% end %>
 	<%= yield %>
 
 </body>

@@ -22,5 +22,18 @@ describe Petition do
     no_title_petition.should_not be_valid
   end
 
+ #  context "creating" do
+	#   before(:each) do
+	#   	User.find_by_email("user@example.com").destroy
+	#     @user_info = { 
+	#       :name => "Example User",
+	#       :email => "user@example.com",
+	#       :password => "foobar",
+	#       :password_confirmation => "foobar"
+	#     }
+ # 	  	User.create!(@user_info)
+	#   end
+
+	# end
 
 end
