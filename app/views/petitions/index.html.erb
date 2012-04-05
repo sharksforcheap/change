@@ -1,8 +1,9 @@
 <h1>Petitions</h1>
 <% @petitions.each do |petition| %>
 	<div class="well">
-		<%= petition.title %><br/>
-		<%= petition.description%><br/>
+		Title: <%= petition.title %><br/>
+		Description: <%= petition.description%><br/>
+		Signature Count: <%= petition.signatures.count %><br/>
 		<% if current_user %>
 			<% if petition.user == current_user %>
 				<a href="<%= edit_petition_path(petition)%>">
@@ -10,9 +11,11 @@
 				</a>
 			<% end %>
 
-			<div class="btn">
-				Add your signature!
-			</div>
+			<a href="<%= signatures_create_path(petition.id)%>">
+				<div class="btn">
+					Add your signature!
+				</div>
+			</a>
 		<% end %>
 	</div>
 <% end %>
