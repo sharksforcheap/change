@@ -2,8 +2,17 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'devise'
-gem 'rspec'
 
+group :test do
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem "factory_girl_rails"
+	gem "email_spec"
+	gem "cucumber-rails"
+	gem "capybara"
+	gem "database_cleaner"
+	gem "launchy"
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
