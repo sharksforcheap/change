@@ -1,2 +1,13 @@
-<h1>Petitions#new</h1>
-<p>Find me in app/views/petitions/new.html.erb</p>
+<h2>Create a new petition</h2>
+
+<%= form_for @petition do |f| %>
+  
+  <div><%= f.label :title %><br />
+  <%= f.text_field :title %></div>
+
+  <div><%= f.label :description %><br />
+  <%= f.text_field :description %></div>
+
+  <div><%= f.submit "Create a petition" %></div>
+<% end %>
+

@@ -20,6 +20,7 @@
 			  <% if current_user %>
 				  <li><a href="<%= destroy_user_session_path%>">Logout</a></li>
  				  <li><a href="<%= edit_user_registration_path%>">Edit account</a></li>
+ 				  <li><a href="<%= new_petition_path%>">Create Petition</a></li>
 
 				<% else %>
   		  	<li><a href="<%= new_user_session_path%>">Login</a></li>

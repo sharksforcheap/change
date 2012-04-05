@@ -1,2 +1,9 @@
-<h1>Petitions#edit</h1>
-<p>Find me in app/views/petitions/edit.html.erb</p>
+<h1>Edit your petition</h1>
+<%= form_for @petition do |f| %>
+  
+  <div><%= f.label :description %><br />
+  <%= f.text_field :description %></div>
+
+  <div><%= f.submit "Edit this petition" %></div>
+<% end %>
+
