@@ -1,7 +1,8 @@
 ChangeOrg::Application.routes.draw do
+  resources :petitions
   devise_for :users
 
-  devise_scope :user do root :to => "devise/sessions#new" end
+  devise_scope :user do root :to => "petitions#index" end
 
 
   # The priority is based upon order of creation:
